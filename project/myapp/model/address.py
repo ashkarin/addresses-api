@@ -1,0 +1,50 @@
+from myapp.app import database as db
+
+
+class Address(db.Model):
+    """ Address Model for storing adress related details """
+    __tablename__ = "address_long"
+
+    object_id_1 = db.Column(db.Integer)
+    object_id = db.Column(db.Integer, primary_key=True)
+    gml_parent = db.Column(db.String(255))
+    gml_pare_1 = db.Column(db.String(255))
+    gml_id = db.Column(db.Integer)
+    address_id = db.Column(db.Integer)
+    address_id_x = db.Column(db.Integer)
+    hnr = db.Column(db.Integer)
+    hnr_xsi_ni = db.Column(db.Integer)
+    hnr_zusatz = db.Column(db.String(255))
+    hnr_zusatz_1 = db.Column(db.Integer)
+    str_nr = db.Column(db.Integer)
+    str_nr_xsi = db.Column(db.Integer)
+    str_name = db.Column(db.String(255))
+    str_name_x = db.Column(db.Integer)
+    plz = db.Column(db.Integer)
+    plz_xsi_ni = db.Column(db.Integer)
+    bez_name = db.Column(db.String(255))
+    bez_name_x = db.Column(db.Integer)
+    bez_nr = db.Column(db.Integer)
+    bez_nr_xsi = db.Column(db.Integer)
+    ort_name = db.Column(db.String(255))
+    ort_name_x = db.Column(db.Integer)
+    ort_nr = db.Column(db.Integer)
+    ort_nr_xsi = db.Column(db.Integer)
+    plr_name = db.Column(db.String(255))
+    plr_name_x = db.Column(db.Integer)
+    plr_nr = db.Column(db.Integer)
+    plr_nr_xsi = db.Column(db.Integer)
+    blk = db.Column(db.Integer)
+    blk_xsi_ni = db.Column(db.Integer)
+    adr_datum = db.Column(db.Text)
+    adr_datum_ = db.Column(db.Integer)
+    str_datum = db.Column(db.Text)
+    str_datum_ = db.Column(db.Integer)
+    qualitaet = db.Column(db.String(255))
+    qualitaet_ = db.Column(db.Integer)
+    typ = db.Column(db.String(255))
+    typ_xsi_ni = db.Column(db.Integer)
+    gml_id_xsi = db.Column(db.Integer)
+
+    def __repr__(self):
+        return "<Address '{}, {}'>".format(self.object_id, self.plz)
