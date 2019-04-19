@@ -6,7 +6,3 @@
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-
-# Assets
-project/assets/*.csv
-
