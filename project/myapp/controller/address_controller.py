@@ -27,9 +27,9 @@ class AddressDistributionImage(Resource):
         if not dist:
             api.abort(404)
         else:
-            buf = plot_barchart(dist, 
-                                threshold=0, 
-                                title='Address distribution by zip codes', 
+            buf = plot_barchart(dist,
+                                threshold=0,
+                                title='Address distribution by zip codes',
                                 y_label='Number of addresses')
             name = generate_random_name()
             return send_file(buf, attachment_filename=name + '.jpeg', mimetype='image/jpg')
@@ -58,9 +58,9 @@ class AddressDistributionByZipcodeImage(Resource):
         if not dist:
             api.abort(404)
         else:
-            buf = plot_barchart(dist, 
-                                threshold=0, 
-                                title='Address distribution for a zip code ({})'.format(zip_code), 
+            buf = plot_barchart(dist,
+                                threshold=0,
+                                title='Address distribution for a zip code ({})'.format(zip_code),
                                 y_label='Number of addresses')
             name = generate_random_name()
             return send_file(buf, attachment_filename=name + '.jpeg', mimetype='image/jpg')
@@ -85,9 +85,9 @@ class YearsDistributionImage(Resource):
         if not dist:
             api.abort(404)
         else:
-            buf = plot_barchart(dist, 
-                                threshold=0, 
-                                title='Address distribution by years', 
+            buf = plot_barchart(dist,
+                                threshold=0,
+                                title='Address distribution by years',
                                 y_label='Number of addresses')
             name = generate_random_name()
             return send_file(buf, attachment_filename=name + '.jpeg', mimetype='image/jpg')
@@ -116,9 +116,9 @@ class YearsDistributionByZipcodeImage(Resource):
         if not dist:
             api.abort(404)
         else:
-            buf = plot_barchart(dist, 
-                                threshold=0, 
-                                title='Address distribution by years for ({})'.format(zip_code), 
+            buf = plot_barchart(dist,
+                                threshold=0,
+                                title='Address distribution by years for ({})'.format(zip_code),
                                 y_label='Number of addresses')
             name = generate_random_name()
             return send_file(buf, attachment_filename=name + '.jpeg', mimetype='image/jpg')
