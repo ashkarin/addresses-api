@@ -2,6 +2,7 @@ import io
 import matplotlib
 matplotlib.use('agg') # Should be called before pyplot import
 
+
 import matplotlib.pyplot as plt
 import numpy as np
 from random import choice
@@ -25,15 +26,20 @@ def plot_barchart(dist, threshold=0, title=None, x_label=None, y_label=None):
     if title is not None:
         ax.set_title(title)
 
-    ax.set_xticks(idxs)
-    ax.set_xticklabels(tuple(x), rotation=45, ha='right')
+    if len(x) < 40:
+        ax.set_xticks(idxs)
+        ax.set_xticklabels(tuple(x), rotation=45, ha='right')
+    else:
+        ax.set_xticks(idxs[::4])
+        ax.set_xticklabels(tuple(x), rotation=90, ha='right')
 
     if x_label is not None:
-        ax.set_xlabel(x_label)
+        ax.set_xlabel(x_label, labelpad=20)
 
     if y_label is not None:
         ax.set_ylabel(y_label)
 
+    
     plt.tight_layout()
 
     buf = io.BytesIO()
