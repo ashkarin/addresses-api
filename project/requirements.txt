@@ -1,0 +1,9 @@
+flask-restplus
+flask-sqlalchemy
+sqlalchemy-utils 
+matplotlib
+Flask-Script
+psycopg2
+numpy
+pandas
+pyyaml
