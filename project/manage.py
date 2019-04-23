@@ -34,10 +34,10 @@ def run():
 @manager.option('-c', '--conf', dest='conf_path', 
                 help='Path to a column configuration file', default=None)
 def export(path, conf_path):
-    if not database_exists(db.engine.url):
-        create_database(db.engine.url)
+    if not database_exists(database.engine.url):
+        create_database(database.engine.url)
 
-    db.create_all()
+    database.create_all()
 
     df = pd.read_csv(path)
     df = df.head(20000)
@@ -47,9 +47,9 @@ def export(path, conf_path):
         col_config = yaml.load(f)
 
     df = utils.transform_columns(df, col_config)
-    db.session.bulk_insert_mappings(address.Address, df.to_dict(orient='records'))
-    db.session.commit()
-    db.session.close()
+    database.session.bulk_insert_mappings(address.Address, df.to_dict(orient='records'))
+    database.session.commit()
+    database.session.close()
 
 
 if __name__ == '__main__':
