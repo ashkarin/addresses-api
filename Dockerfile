@@ -35,7 +35,7 @@ RUN cd /app && pip install -r requirements.txt
 # Set entrypoint
 RUN echo '#!/bin/sh\n\
 cd /app\n\
-python manage.py export --path /app/assets/Adressen__Berlin.csv --conf /app/assets/columns_config.yaml\n\
+python manage.py export --path /app/assets/Berlin_short.csv --conf /app/assets/columns_config.yaml\n\
 echo "EXPORT COMPLETED"\n\
 python manage.py run\n\
 ' > /app/entry.sh && chmod +x /app/entry.sh
